@@ -1,25 +1,8 @@
 #include <iostream>
+
 #include <QCoreApplication>
-#include <QXmlSimpleReader>
-#include <QXmlInputSource>
-#include <QDebug>
 
-namespace G {
-
-class Handler:public QXmlDefaultHandler
-{
-    bool fatalError(const QXmlParseException &exception)
-    {
-        qWarning() << "Fatal Error on Line: " << exception.lineNumber()
-                   << ", column" << exception.columnNumber() << " : "
-                   << exception.message();
-        return false;
-    }
-
-};
-
-}
-
+#include "ColladaXMLHandler.h"
 
 int main(int argc, char *argv[])
 {
@@ -28,10 +11,10 @@ int main(int argc, char *argv[])
     std::cout << "Hello Qt 5.10.0" << std::endl;
 
     QXmlSimpleReader xmlReader;
-    QFile file{"/Users/julian.guarin/Code/ColladaViewer/collada-octo-singularity/resources/monkey.dae"};
+    QFile file{QString(RES_DIR)+QString("/monkey.dae")};
     QXmlInputSource* pSource = new QXmlInputSource(&file);
 
-    G::Handler* pHandler = new G::Handler();
+    G::ColladaXMLHandler* pHandler = new G::ColladaXMLHandler();
     xmlReader.setContentHandler(pHandler);
     xmlReader.setErrorHandler(pHandler);
 
