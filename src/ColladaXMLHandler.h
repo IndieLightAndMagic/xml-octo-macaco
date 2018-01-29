@@ -5,6 +5,22 @@
 #include <QXmlInputSource>
 #include <QDebug>
 
+
+/*
+Visitor Object: ColladaXMLHandler
+
+This visitor provides the callbacks (as this is an event driven approach):
+
++ startDocument: When the parsing begins.
++ startElement: A new tag opens. A list of attributes insider the tag's header. 
++ endElement: The tag is closing.
++ characters: Data inside the tag.
++ fatalError: When an exception on the parsing process raises.
+
+This handler is attached to a QXmlSimpleReader. The reader makes calls to the mentioned callbacks.
+ 
+
+*/
 namespace G {
 class ColladaXMLHandler:public QXmlDefaultHandler
 {
