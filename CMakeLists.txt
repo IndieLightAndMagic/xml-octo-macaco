@@ -5,6 +5,12 @@
 #   Date: January, 2018.
 
 cmake_minimum_required(VERSION 3.9.0)
+message("Env var QTDIR: $ENV{QTDIR}")
+message("QT5 PREFIX PATH: $ENV{QTDIR}/5.10.0/clang_64/lib/cmake")
+message(STATUS "OLD CMAKE PFX PATH: ${CMAKE_PREFIX_PATH}")
+set(CMAKE_PREFIX_PATH $ENV{QTDIR}/5.10.0/clang_64/lib/cmake)
+message(STATUS "NEW CMAKE PFX PATH: ${CMAKE_PREFIX_PATH}")
+
 
 #Info variables
 include(Info.cmake)
