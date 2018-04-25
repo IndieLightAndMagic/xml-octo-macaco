@@ -6,6 +6,10 @@
 
 cmake_minimum_required(VERSION 3.9.0)
 
+#Project is XMLReaderSample
+set(ProjectName XMLReaderSample)
+project(${ProjectName})
+
 #Info variables
 include(Info.cmake)
 
@@ -18,23 +22,19 @@ include(Sources.cmake)
 #Resources
 include(Resources.cmake)
 
-#Qt Requiere
+#Qt Requirements
 include(Qt.cmake)
 
 
 PrintLine()
 HeaderMessage("XMLReaderSample By Julian Guarin")
 
-#Project is XMLReaderSample
-set(ProjectName XMLReaderSample)
-project(${ProjectName})
 
 #Include Qt from Qt.cmake
 QT_INCLUSION()
 
-message(STATUS "+++++++++++++++++++++++++++++++++")
+message(STATUS "QT RESOURCES FILES:")
 message(STATUS "${QT_RESOURCES}")
-
 
 PrintLine()
 HeaderMessage("Adding Headers To Project")
