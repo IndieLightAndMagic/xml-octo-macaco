@@ -1,4 +1,10 @@
 
+get_directory_property(hasParent PARENT_DIRECTORY)
+if(hasParent)
+	message(STATUS "Has a parent scope.")
+else()
+	message(STATUS "Doesn't have a parent scope.")
+endif()
 
 #Sources 
 set(SOURCES_CPP 

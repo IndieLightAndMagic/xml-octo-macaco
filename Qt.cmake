@@ -12,7 +12,7 @@ function(QT_INCLUSION)
 
 	find_package(Qt5Core REQUIRED)
 	find_package(Qt5Xml REQUIRED)
-	
+
 	#QtQuick Stuff
 	find_package(Qt5Widgets REQUIRED) 
 	find_package(Qt5Qml REQUIRED)
@@ -33,7 +33,7 @@ function(QT_INCLUSION)
 		)
 
 	#QML Resource files addition 
-	qt5_add_resources(QT_RESOURCES qml.qrc)
+	qt5_add_resources(QT_RESOURCES ${CMAKE_SOURCE_DIR}/src/resources/qml.qrc)
 	set(QT_RESOURCES ${QT_RESOURCES} PARENT_SCOPE)
 	
 	#C++ Compiler flags
