@@ -1,10 +1,19 @@
-// import QtQuick 1.0 // to target S60 5th Edition or Maemo 5
-import QtQuick 1.1
+import QtQuick 2.0
 
-import 'widgets/accordion/component' as AccordionListPackage
-import 'widgets/button/component' as DatePickerPackage
-import 'widgets/datepicker/component' as ButtonPackage
+Rectangle{
+id: page
+    width: 320; height: 480
+    color: "lightgray"
 
+    Text {
+        id: helloText
+        text: "Hello world!"
+        y: 30
+        anchors.horizontalCenter: page.horizontalCenter
+        font.pointSize: 24; font.bold: true
+    }
+}
+/*
 Rectangle {
 
     width: 360
@@ -47,3 +56,4 @@ Rectangle {
         }
     }
 }
+*/

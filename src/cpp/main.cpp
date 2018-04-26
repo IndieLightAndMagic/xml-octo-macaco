@@ -1,7 +1,7 @@
 #include <iostream>
 
 //#include <QCoreApplication>
-#include <QGuiApplication>>
+#include <QGuiApplication>
 #include <QQmlApplicationEngine>
 
 #include "ColladaXMLHandler.h"
@@ -24,10 +24,17 @@ int main(int argc, char *argv[])
     bool ok = xmlReader.parse(pSource);
     
     auto qurl = QUrl("qrc:/main.qml");
-    if (!qurl.isValid()) return -1;
-    engine.load();
-    if (engine.rootObjects().isEmpty())
+    if (!qurl.isValid())
+    {
         return -1;
+    }
+
+    engine.load(qurl);
+    if (engine.rootObjects().isEmpty())
+    {
+        return -1;
+    }
+
     
     return a.exec();
 }
