@@ -11,19 +11,21 @@ set(ProjectName XMLReaderSample)
 project(${ProjectName})
 
 #Info variables
-include(Info.cmake)
+include(cmake/Info.cmake)
 
 #Utility messages
-include(Messages.cmake)
-
-#Sources to include
-include(Sources.cmake)
+include(cmake/Messages.cmake)
 
 #Resources
-include(Resources.cmake)
+include(cmake/Resources.cmake)
 
 #Qt Requirements
-include(Qt.cmake)
+include(cmake/Qt.cmake)
+
+#Sources to include
+include(cmake/Sources.cmake)
+
+
 
 
 PrintLine()
