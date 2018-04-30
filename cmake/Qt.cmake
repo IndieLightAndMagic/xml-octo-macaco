@@ -37,7 +37,9 @@ function(QT_INCLUSION)
 	set(QT_RESOURCES ${QT_RESOURCES} PARENT_SCOPE)
 	
 	#C++ Compiler flags
-	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${Qt5Widgets_INTERFACE_COMPILE_OPTIONS}" PARENT_SCOPE)
+	set(CMAKE_CXX_FLAGS 
+		"${CMAKE_CXX_FLAGS} ${Qt5Widgets_INTERFACE_COMPILE_OPTIONS} -std=c++14"
+		PARENT_SCOPE)
 
 	
 	message(STATUS "==============================================================")
