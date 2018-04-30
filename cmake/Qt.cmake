@@ -43,6 +43,7 @@ function(QT_INCLUSION)
 		"${CMAKE_CXX_FLAGS} ${Qt5Widgets_INTERFACE_COMPILE_OPTIONS} -std=c++14"
 		PARENT_SCOPE)
 
+	set(CMAKE_INSTALL_CONFIG_NAME "Debug" PARENT_SCOPE)
 	
 	message(STATUS "==============================================================")
 	message(STATUS "Widgets: ${Qt5Widgets_INCLUDE_DIRS}")
