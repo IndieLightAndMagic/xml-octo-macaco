@@ -1,8 +1,9 @@
+
 function(QT_INCLUSION)
 
 	message("Env var QTDIR: $ENV{QTDIR}")
-	message("QT5 PREFIX PATH: $ENV{QTDIR}/5.10.0/clang_64/lib/cmake")
-	set(CMAKE_PREFIX_PATH $ENV{QTDIR}/5.10.0/clang_64/lib/cmake)
+	message("QT5 PREFIX PATH: $ENV{QTDIR}/lib/cmake")
+	set(CMAKE_PREFIX_PATH $ENV{QTDIR}/lib/cmake)
 	message(STATUS "NEW CMAKE PFX PATH: ${CMAKE_PREFIX_PATH}")
 
 	set(CMAKE_INCLUDE_CURRENT_DIR ON)
@@ -20,12 +21,13 @@ function(QT_INCLUSION)
 
 	#Include Directories
 	include_directories(
+		${Qt5Core_INCLUDE_DIRS}
 		${Qt5Widgets_INCLUDE_DIRS}
 		${Qt5Qml_INCLUDE_DIRS}
 		${Qt5Quick_INCLUDE_DIRS}
 		)
-
-	#Definitions
+        
+        #Definitions
 	add_definitions(
 		${Qt5Widgets_DEFINITIONS}
 		${Qt5Qml_DEFINITIONS}
