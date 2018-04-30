@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
     std::cout << "Hello Qt 5.10.0" << std::endl;
 
     QXmlSimpleReader xmlReader;
-    QFile file{QString(RES_DIR)+QString("/monkey.dae")};
+    QFile file{QString(RES_DIR)+QString("/simpleTest.dae")};
     QXmlInputSource* pSource = new QXmlInputSource(&file);
 
     G::ColladaXMLHandler* pHandler = new G::ColladaXMLHandler();

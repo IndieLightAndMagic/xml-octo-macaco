@@ -22,7 +22,7 @@ bool ColladaXMLHandler::startElement(const QString& rUriName, const QString& rLo
     if (atts.length()>0){
         QString fieldName = atts.qName(0);
         QString fieldValue = atts.value(0);
-        cout << QString("{%2=%3}").arg(fieldName).arg(fieldValue);
+        cout << QString("{%2 .=. %3}").arg(fieldName).arg(fieldValue);
     }
     cout << "{";
     m_indent += " ";
