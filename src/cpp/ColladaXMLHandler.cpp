@@ -13,8 +13,15 @@ bool ColladaXMLHandler::startDocument(){
 bool ColladaXMLHandler::characters(const QString& rText){
 
     QString t = rText;
-    std::cout << rText.toUtf8().data() << std::endl;
     cout << t.remove('\n');
+    auto tsize = t.size();
+    if (tsize == 0) return true;
+    for ( int index = 0; index < tsize; ++index)
+    {
+        auto x = t[index].toLatin1();
+        std::cout << "*" << std::hex << x << std::dec << "*";
+    }
+    std::cout << t.toUtf8().data() << std::endl;
     return true;
 }
 
